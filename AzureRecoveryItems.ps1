@@ -2,7 +2,7 @@
 #Install-Module Az
 
 # Set variables
-$AzureSubscriptionName = "NA.REPORTING"
+$AzureSubscriptionName = "<SubscriptionName>"
 
 # Connect to Azure
 Connect-AzAccount
@@ -47,3 +47,4 @@ foreach ($ResourceGroup in $ResourceGroups)
         }
     }
 }
+
