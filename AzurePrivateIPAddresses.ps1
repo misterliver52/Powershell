@@ -1,7 +1,7 @@
 ﻿Connect-AzAccount
-$subscriptionId = "31bb8307-fa5b-4c5c-9e26-f30cbe73e42c"
-$reportName = "AzureVM_IPs.csv"
-$pathToSave = "C:\Users\bensmith\desktop\"
+$subscriptionId = "<SubscriptionID>"
+$reportName = "<DestFileNameNoExtension>"
+$pathToSave = "<DestFilePath>"
 Select-AzSubscription $subscriptionId
 $report = @()
 $vms = Get-AzVM
@@ -29,4 +29,5 @@ foreach ($nic in $nics) {
         $report+=$info 
     } 
 $report | ft VmName, ResourceGroupName, Region, VmSize, VirtualNetwork, Subnet, PrivateIpAddress, OsType, PublicIPAddress, NicName, ApplicationSecurityGroup 
-$report | Export-CSV $pathToSave+"\AzureVM_LAN_IPs.csv"
+
+$report | Export-CSV $pathToSave+"\"+$reportName+".csv"
