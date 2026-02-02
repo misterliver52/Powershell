@@ -1,6 +1,6 @@
 ﻿#set variables
-$pathToSave = "C:\users\bensmith\desktop\"
-$subscriptionId = "31bb8307-fa5b-4c5c-9e26-f30cbe73e42c"
+$pathToSave = "<destinationPATH>"
+$subscriptionId = "<SubscriptionID>"
 
 
 # Authenticate to Azure
@@ -42,3 +42,4 @@ foreach ($resource in $resources) {
 $ColumnOrder = "ResourceGroup","Name","Location","Type","ManagedBy","Tags","Notes"
 # Export the output to a CSV file
 $output | Select-Object $columnOrder | Export-Csv -Path $pathToSave"AzureResources_v2.2.csv" -NoTypeInformation
+
