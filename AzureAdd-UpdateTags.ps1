@@ -7,15 +7,15 @@ Connect-AzAccount
 Set-AzContext -SubscriptionId 31bb8307-fa5b-4c5c-9e26-f30cbe73e42c
 
 # Define the resource group name and the resources' name or ID
-$resourceGroupName = "amdafaeedecrypt"
+$resourceGroupName = "<ResourceGroupName>"
 
-$resourceNames = @("amdafaeedecrypt")
+$resourceNames = @("<ResourceNames>")
 
 # Define the tags you want to update
 $newTags = @{
  #   "Environment" = "uat"
-    "am-da-tag-purpose" = "iHRapy"
-    "Application" = "iHRApy"
+    "<tagName1>" = "<value1>"
+    "<tagName2>" = "<value2>"
 }
 
 # Update the tags for each resource
@@ -31,4 +31,5 @@ foreach ($resourceName in $resourceNames) {
 
     # Update the resource with the new tags
     $resource | Set-AzResource -Force
+
 }
