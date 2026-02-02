@@ -12,8 +12,9 @@ foreach ($user in $users) {
 
 #Select and output the desired properties to a CSV file
 $filename = "AADUserManagerList_" + (Get-Date -Format "yyyyMMdd") + ".csv"
-$path = "C:\Users\Bensmith\OneDrive - TK Elevator\Documents\DATA ANALYTICS\Powershell\ADUser Reports\" + $filename
+$path = "<destination file path>\" + $filename
 $users | Select-Object UserPrincipalName, DisplayName, Mail, ManagerEmailAddress, UserState | Export-Csv -Path $path -NoTypeInformation
 
 #Display a message indicating the CSV file location
 Write-Host "The AAD user manager list has been exported to: $path"
+
