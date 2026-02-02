@@ -27,10 +27,11 @@ $usersData = foreach ($user in $users) {
 $dateStamp = Get-Date -Format 'yyyyMMdd'
 
 # Build the CSV filename with the datestamp
-$csvFileName = "C:\Users\Bensmith\OneDrive - TK Elevator\Documents\DATA ANALYTICS\Powershell\ADUser ReportsUsersData_$dateStamp.csv"
+$csvFileName = "<DestPathAndFilename>_$dateStamp.csv"
 
 # Export the user data to the CSV file
 $usersData | Export-Csv -Path $csvFileName -NoTypeInformation
 
 # Output the CSV file path
+
 Write-Host "User data exported to: $csvFileName"
